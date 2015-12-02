@@ -1,0 +1,15 @@
+{
+    "name": "pandorajs",
+    "description": "it's is comming",
+    "version": "0.0.8",
+    "main": "pandora.js",
+    "peerDependencies": {
+        "express":">=4.13.3"
+    },
+    "dependencies": {
+        "body-parser": "^1.14.1",
+        "lang-utils": "^0.0.2",
+        "file-plus": "^0.0.2",
+        "express": "^4.13.3"
+    }
+}
