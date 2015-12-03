@@ -16,7 +16,7 @@
 		* footer.js
 		* footer.less
 * 页面路由	`routes`该页面下的路由会被自动挂载
-* tpls		`视图模板`
+* pages		`视图模板`
 	* home
 		* home.html
 		* home.js
