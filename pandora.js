@@ -173,7 +173,8 @@ function useMiddleware(app, dir) {
                 //存在对应js文件判断为可用页面，挂在到总路由
                 app.use(require(filePath));
             } catch (err) {
-                console.log(err);
+                console.error('\npandorajs: load route error','\n',
+                    'file:\t'+filePath,'\nerror:\t',err);
             }
         }
     });
