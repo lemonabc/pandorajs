@@ -1,7 +1,7 @@
 {
     "name": "pandorajs",
     "description": "it's is comming",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "main": "pandora.js",
     "peerDependencies": {
         "express":">=4.13.3"
