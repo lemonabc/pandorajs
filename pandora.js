@@ -59,6 +59,12 @@ pan.prototype = {
         app.set('views', $projectConfig.page);
         app.set('$config', $projectConfig);
 
+        //TODO remove
+        app.use(function(req, response, next){
+            app.set('hostname', req.hostname);
+            next();
+        });
+
         setViewLookUp(app);
 
         //post相关处理
@@ -112,8 +118,16 @@ pan.prototype = {
                 path: '/Users/tick/Documents/2.Projects/express-astro/pages/index/index.html' 
             }
         */
-        // console.log(pageName);
-        // pageName = nodePath.parse(pageName);
+        //TODO remove
+        //未设置CDN时，自动设置静态资源服务器地址
+        if(!options.settings.$config.globalVariables.cdn){
+            var stCfg = require(nodePath.join(options.settings.$config.root,
+                'config', 'static.js'));
+            options.settings.$config.globalVariables.cdn = 
+                'http://' + options.settings.hostname + ':' +
+            stCfg.port+(stCfg.cdnPrefix?stCfg.cdnPrefix:'');
+        }
+
         engine.renderPage(pageName, options, callback);
     },
     engine: engine
