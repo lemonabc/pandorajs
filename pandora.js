@@ -121,11 +121,15 @@ pan.prototype = {
         //TODO remove
         //未设置CDN时，自动设置静态资源服务器地址
         if(!options.settings.$config.globalVariables.cdn){
+            options.settings.$config.$autoCdn = true;
+        }
+        if(options.settings.$config.$autoCdn){
             var stCfg = require(nodePath.join(options.settings.$config.root,
                 'config', 'static.js'));
-            options.settings.$config.globalVariables.cdn = 
-                'http://' + options.settings.hostname + ':' +
-            stCfg.port+(stCfg.cdnPrefix?stCfg.cdnPrefix:'');
+
+            options.settings.$config.globalVariables.cdn = 'http://' + options.settings.hostname + ':' +
+                stCfg.port+(stCfg.cdnPrefix?stCfg.cdnPrefix:'');
+
         }
 
         engine.renderPage(pageName, options, callback);
