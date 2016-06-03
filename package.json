@@ -1,7 +1,7 @@
 {
     "name": "pandorajs",
     "description": "it's is comming",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "main": "pandora.js",
     "peerDependencies": {
         "express":">=4.13.3"
@@ -10,7 +10,11 @@
         "body-parser": "^1.14.1",
         "lang-utils": "~1.0.0",
         "file-plus": "~1.0.0",
+        "html": "0.0.10",
         "express": "^4.13.3"
+    },
+    "scripts": {
+        "publish": "cnpm sync pandora.js"
     },
     "repository": "lemonabc/pandorajs",
     "email" : "ilemonabc@qq.com",
