@@ -39,6 +39,8 @@ pan.prototype = {
         var defaultCfg = {
             root: options.root,
             routes: nodePath.join(options.root, 'routes'),
+            openTag:'{{',
+            closeTag:'}}',
             cache: true,
             globalVariables: {},
             autoAsset: false,
